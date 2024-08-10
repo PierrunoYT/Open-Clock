@@ -160,6 +160,8 @@ timerResetButton.addEventListener('click', () => {
 });
 
 // Alarm functionality
+const alarmSound = document.getElementById('alarm-sound');
+
 function updateAlarmDisplay() {
     if (alarmTime) {
         const now = new Date();
@@ -170,12 +172,22 @@ function updateAlarmDisplay() {
             alarmDisplay.textContent = `Alarm in ${hours}h ${minutes}m`;
         } else {
             alarmDisplay.textContent = 'Alarm!';
-            alert('Alarm!');
+            playAlarmSound();
             clearAlarm();
         }
     } else {
         alarmDisplay.textContent = 'No alarm set';
     }
+}
+
+function playAlarmSound() {
+    alarmSound.play();
+    setTimeout(() => {
+        if (!alarmSound.paused) {
+            alarmSound.pause();
+            alarmSound.currentTime = 0;
+        }
+    }, 30000); // Stop the alarm after 30 seconds
 }
 
 function setAlarm() {
