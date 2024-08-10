@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time and Stopwatch App</title>
+    <title>iOS Stopwatch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Time and Stopwatch App</h1>
-        <div class="clock">
-            <h2>Current Time</h2>
-            <div id="current-time"></div>
-        </div>
         <div class="stopwatch">
-            <h2>Stopwatch</h2>
-            <div id="stopwatch-display">00:00:00</div>
-            <div class="controls">
-                <button id="start-stop">Start</button>
-                <button id="reset">Reset</button>
-            </div>
+            <div id="stopwatch-display">00:00.00</div>
+            <div id="lap-times"></div>
+        </div>
+        <div class="controls">
+            <button id="lap-reset" class="button">Lap</button>
+            <button id="start-stop" class="button">Start</button>
         </div>
     </div>
     <script src="script.js"></script>
