@@ -37,18 +37,51 @@ body.light-mode {
     text-align: center;
 }
 
-.stopwatch {
+.time-display {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.tab-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: var(--start-button-bg);
+    color: var(--start-button-text);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.stopwatch, #timer, #alarm {
     margin-bottom: 2rem;
 }
 
-#stopwatch-display {
-    font-size: 5rem;
+#stopwatch-display, #timer-display, #alarm-display {
+    font-size: 4rem;
     font-weight: 200;
     margin-bottom: 1rem;
 }
 
 #lap-times {
-    height: 200px;
+    height: 150px;
     overflow-y: auto;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -56,7 +89,7 @@ body.light-mode {
 
 .controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 1rem;
 }
 
@@ -69,18 +102,15 @@ body.light-mode {
     border: none;
     cursor: pointer;
     transition: opacity 0.3s;
+    background-color: var(--button-bg);
+    color: var(--button-text);
 }
 
 .button:active {
     opacity: 0.7;
 }
 
-#lap-reset {
-    background-color: var(--button-bg);
-    color: var(--button-text);
-}
-
-#start-stop {
+#start-stop, #timer-start, #alarm-set {
     background-color: var(--start-button-bg);
     color: var(--start-button-text);
 }
@@ -100,4 +130,28 @@ body.light-mode {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.timer-input {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.timer-input input {
+    width: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 0.5rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+#alarm-time {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
 }
